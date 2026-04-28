@@ -72,6 +72,9 @@ end
 # Simple form for easier form building
 gem "simple_form"
 
+gem "view_component"
+
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
