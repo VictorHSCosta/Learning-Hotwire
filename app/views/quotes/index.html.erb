@@ -5,6 +5,7 @@
         <h1 class="text-3xl font-bold text-gray-900">Quotes</h1>
         <%= link_to "New Quote",
             new_quote_path,
+            data: { turbo_frame: dom_id(Quote.new) },
             class: "bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200" %>
       </div>
 
@@ -21,18 +22,24 @@
         </div>
       <% end %>
 
+      <%= turbo_frame_tag Quote.new %>
+
       <%# Lista de quotes %>
-      <div class="space-y-4">
-        <% if @quotes.any? %>
-          <% @quotes.each do |quote| %>
-            <%= render "quote", quote: quote %>
+      <%= turbo_frame_tag "quotes" do %>
+        <div class="space-y-4">
+          <% if @quotes.any? %>
+            <% @quotes.each do |quote| %>
+              <%= render "quote", quote: quote %>
+            <% end %>
+          <% else %>
+            <div class="text-center py-12">
+              <p class="text-gray-500 text-lg">No quotes yet.</p>
+              <p class="text-gray-400 text-sm mt-2">Create your first quote to get started!</p>
+            </div>
           <% end %>
-        <% else %>
-          <div class="text-center py-12">
-            <p class="text-gray-500 text-lg">No quotes yet.</p>
-            <p class="text-gray-400 text-sm mt-2">Create your first quote to get started!</p>
-          </div>
-        <% end %>
+        </div>
+      <% end %>
+      
       </div>
     </div>
   </div>

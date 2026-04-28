@@ -1,28 +1,35 @@
-<div class="quote-item bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-200">
-  <div class="flex items-center justify-between">
-    <div class="flex-1">
-      <h3 class="text-xl font-semibold text-gray-900 mb-2">
-        <%= quote.name %>
-      </h3>
-      <p class="text-sm text-gray-500">
-        Created by: <%= quote.user.email %>
-      </p>
-      <p class="text-xs text-gray-400 mt-1">
-        <%= time_ago_in_words(quote.created_at) %> ago
-      </p>
-    </div>
+<%= turbo_frame_tag quote do %>
+  <div class="quote-item bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition duration-200 relative hover:border-primary cursor-pointer">
+    <%= link_to "",
+        quote_path(quote),
+        data: { turbo_frame: "_top" },
+        class: "absolute inset-0 z-0" %>
 
-    <div class="flex items-center space-x-2">
-      <% if quote.user == current_user %>
-        <%= link_to "Edit",
-            edit_quote_path(quote),
-            class: "bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition duration-200" %>
-        <%= button_to "Delete",
-            quote_path(quote),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "bg-red-500 hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition duration-200" %>
-      <% end %>
+    <div class="flex items-center justify-between relative z-10">
+      <div class="flex-1">
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">
+          <%= quote.name %>
+        </h3>
+        <p class="text-sm text-gray-500">
+          Created by: <%= quote.user.email %>
+        </p>
+        <p class="text-xs text-gray-400 mt-1">
+          <%= time_ago_in_words(quote.created_at) %> ago
+        </p>
+      </div>
+
+      <div class="flex items-center space-x-2">
+        <% if quote.user == current_user %>
+          <%= link_to "Edit",
+              edit_quote_path(quote),
+              class: "relative z-10 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition duration-200" %>
+          <%= button_to "Delete",
+              quote_path(quote),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "relative z-10 bg-red-500 hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition duration-200" %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
