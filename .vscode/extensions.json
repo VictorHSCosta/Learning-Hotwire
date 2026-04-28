@@ -2,7 +2,6 @@
   "recommendations": [
     // Tailwind CSS
     "bradlc.vscode-tailwindcss",
-    "stivo.tailwind-fold",
 
     // Ruby / Rails
     "Shopify.ruby",
