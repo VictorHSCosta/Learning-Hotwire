@@ -1,2 +1,2 @@
-<%= turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote } %>
+<%= turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote, current_user: current_user } %>
 <%= turbo_stream.update Quote.new, "" %>

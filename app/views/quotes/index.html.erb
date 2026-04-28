@@ -1,5 +1,9 @@
 <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-4xl mx-auto">
+    
+    <%= turbo_stream_from "quotes" %>
+
+
     <div class="bg-white shadow-xl rounded-lg p-8">
       <div class="flex items-center justify-between mb-8">
         <h1 class="text-3xl font-bold text-gray-900">Quotes</h1>
@@ -29,7 +33,7 @@
         <div class="space-y-4">
           <% if @quotes.any? %>
             <% @quotes.each do |quote| %>
-              <%= render "quote", quote: quote %>
+              <%= render "quote", quote: quote, current_user: current_user %>
             <% end %>
           <% else %>
             <div class="text-center py-12">
