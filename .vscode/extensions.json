@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    // Tailwind CSS
+    "bradlc.vscode-tailwindcss",
+    "stivo.tailwind-fold",
+
+    // Ruby / Rails
+    "Shopify.ruby",
+    "siang.slim",
+    "kaiwood.floorinator",
+    "misogi.ruby-rubocop",
+
+    // ERB
+    "aliariff.vscode-erb-beautify",
+
+    // Geral
+    "ms-vscode.live-server",
+    "ritwickdey.liveserver"
+  ]
+}

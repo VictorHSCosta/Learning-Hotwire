@@ -69,6 +69,9 @@ group :development, :test do
   gem "faker", "~> 3.4"
 end
 
+# Simple form for easier form building
+gem "simple_form"
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"

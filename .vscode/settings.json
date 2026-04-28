@@ -1,0 +1,26 @@
+{
+  // Arquivos a serem associados com ERB
+  "files.associations": {
+    "*.erb": "erb",
+    "Gemfile": "ruby",
+    "Rakefile": "ruby"
+  },
+
+  // Formatação automática
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "Shopify.ruby",
+
+  // Configurações do Ruby
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby",
+    "editor.formatOnSave": true
+  },
+
+  "[erb]": {
+    "editor.formatOnSave": true
+  },
+
+  // Live Preview (se usar)
+  "livePreview.settings.port": 3000,
+  "livePreview.settings.host": "http://localhost"
+}
