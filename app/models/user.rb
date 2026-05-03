@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :quotes, dependent: :destroy
   belongs_to :company
+
+  def name 
+    email.split('@').first.capitalize
+  end
 end

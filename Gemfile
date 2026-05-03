@@ -62,6 +62,9 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
+  # ERB linter and formatter
+  gem "erb_lint", require: false
+
   # RSpec testing framework
   gem "rspec-rails", "~> 6.0"
 
