@@ -21,7 +21,7 @@ gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
 
 # Authentication solution for Rails
-gem "devise", "~> 4.9"
+gem "devise", "~> 5.0"
 
 # Tailwind CSS for Rails
 gem "tailwindcss-rails", "~> 2.0"
